@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Button } from "../ui/button"
 
 const Navbar = () => {
   return (
@@ -7,9 +8,10 @@ const Navbar = () => {
         <div className="flex items-center justify-center gap-4">
           <Image src="/images/king.png" width={36} height={36} alt="King Logo" />
           <span className="font-semibold">Orifuke Games</span>
+          <Button className="bg-purple-200 text-black hover:bg-purple-400 uppercase" size="sm" aria-label="Sign In">Store</Button>
         </div>
         <div>
-          <button type="button">Sign in</button>
+          <Button className="bg-purple-200 text-black hover:bg-purple-400" size="sm" aria-label="Sign In">Sign In</Button>
         </div>
       </nav>
     </header>
