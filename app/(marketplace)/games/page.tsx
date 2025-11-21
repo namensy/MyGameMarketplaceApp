@@ -1,6 +1,8 @@
 // หน้า Landing ของ marketplace แบบ static + dark theme
 // ใช้เป็น Server Component (ไม่มี "use client") เพื่อให้เพจโหลดเร็วและโค้ดอ่านง่าย
 
+import MarketplaceToolbar from "@/components/marketplace/MarketplaceToolbar";
+
 type FeaturedGame = {
   id: number;
   title: string;
@@ -15,7 +17,7 @@ const featuredGames: FeaturedGame[] = [
   {
     id: 1,
     title: "Cyber Nova",
-    genre: "Action • Sci‑Fi",
+    genre: "Action • Sci-Fi",
     price: "$24.99",
     rating: 4.7,
     highlight: "Top seller",
@@ -26,7 +28,7 @@ const featuredGames: FeaturedGame[] = [
     genre: "Adventure • RPG",
     price: "$18.50",
     rating: 4.5,
-    highlight: "Editor’s pick",
+    highlight: "Editor's pick",
   },
   {
     id: 3,
@@ -42,6 +44,8 @@ export default function GamesPage() {
   return (
     // พื้นหลัง dark + ตัวหนังสืออ่านง่าย
     <main className="min-h-screen bg-slate-950 text-slate-100">
+
+      <MarketplaceToolbar />
       {/* กำหนดความกว้าง content กลางจอ และเว้นระยะด้านบน/ล่าง */}
       <div className="mx-auto max-w-6xl px-4 py-12 space-y-16">
         {/* HERO SECTION */}
