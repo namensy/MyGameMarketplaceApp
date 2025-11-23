@@ -4,10 +4,6 @@
 import { GAME_CATEGORIES, useGameFilters } from "@/hooks/useGameFilters";
 import type { SortOption } from "@/lib/store/useGameFilterStore";
 import { useGames } from "@/hooks/useGames";
-import { Search } from "lucide-react";
-
-const tabs = ["Discover", "Browse", "News"] as const;
-const activeTab = "Discover"; // ภายหลังสามารถเปลี่ยนให้ผูกกับ route หรือ state ได้
 
 const MarketplaceToolbar = () => {
   const { games, isLoading, isError } = useGames({ page: 1, limit: 9 });
@@ -105,44 +101,6 @@ const MarketplaceToolbar = () => {
           </div>
         </div>
       </div>
-      <section className="sticky top-0 z-20 mt-6 bg-slate-950/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center gap-6 px-4 py-3">
-          <form
-            role="search"
-            className="flex max-w-sm items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm text-slate-300"
-          >
-            <div className="flex w-full items-center gap-2 rounded-full border border-slate-700 bg-slate-950/60 px-3 py-1.5">
-              <Search className="h-3 w-3 text-slate-500" />
-              <input
-                type="search"
-                placeholder="Search store"
-                className="w-full bg-transparent text-xs text-slate-100 placeholder:text-slate-500 focus:outline-none"
-              />
-            </div>
-          </form>
-
-          <nav
-            aria-label="Marketplace sections"
-            className="flex items-center gap-6 text-sm"
-          >
-            {tabs.map((tab) => {
-              const isActive = tab === activeTab;
-              return (
-                <button
-                  key={tab}
-                  type="button"
-                  className={`transition-colors ${isActive
-                    ? "text-slate-50"
-                    : "text-slate-400 hover:text-slate-200"
-                    }`}
-                >
-                  {tab}
-                </button>
-              );
-            })}
-          </nav>
-        </div>
-      </section>
     </>
   );
 };

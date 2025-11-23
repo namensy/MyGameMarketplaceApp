@@ -3,24 +3,31 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { useAuth } from "@/hooks/useAuth";
+import Link from "next/link";
 
 const Navbar = () => {
-  const { user, status, logout } = useAuth();
+  const { user, status, logout, signInWithGoogle } = useAuth();
   const isLoading = status === "loading";
 
   return (
     <header className="w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur">
       <nav className="mx-auto flex h-16 max-w-screen items-center justify-between px-4">
         <div className="flex items-center justify-center gap-4">
-          <Image src="/images/king.png" width={36} height={36} alt="King Logo" />
-          <span className="font-semibold">Orifuke Games</span>
-          <Button
-            className="bg-indigo-400 text-black hover:bg-indigo-500 uppercase"
-            size="sm"
-            aria-label="Store"
-          >
-            Store
-          </Button>
+          <Link href="/">
+            <Image src="/images/king.png" width={36} height={36} alt="King Logo" />
+          </Link>
+          <Link href="/">
+            <span className="font-semibold">Orifuke Games</span>
+          </Link>
+          <Link href="/games">
+            <Button
+              className="bg-indigo-400 text-black hover:bg-indigo-500 uppercase"
+              size="sm"
+              aria-label="Store"
+            >
+              Store
+            </Button>
+          </Link>
         </div>
 
         <div className="flex items-center gap-3">
@@ -59,7 +66,7 @@ const Navbar = () => {
               className="bg-indigo-400 text-black hover:bg-indigo-500"
               size="sm"
               aria-label="Sign in"
-              onClick={logout}
+              onClick={signInWithGoogle}
             >
               Sign In
             </Button>

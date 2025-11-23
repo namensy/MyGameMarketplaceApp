@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         hostname: "shared.akamai.steamstatic.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
     ],
   },
 };

@@ -43,11 +43,8 @@ const featuredGames: FeaturedGame[] = [
 
 export default function GamesPage() {
   return (
-    // พื้นหลัง dark + ตัวหนังสืออ่านง่าย
     <main className="min-h-screen bg-slate-950 text-slate-100">
 
-      <MarketplaceToolbar />
-      {/* กำหนดความกว้าง content กลางจอ และเว้นระยะด้านบน/ล่าง */}
       <div className="mx-auto max-w-6xl px-4 py-12 space-y-16">
         {/* HERO SECTION */}
         <section className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
@@ -79,7 +76,6 @@ export default function GamesPage() {
             </p>
           </div>
 
-          {/* กล่อง visual ด้านขวา: ใช้ gradient + border ให้ดูเหมือน promo card */}
           <div className="mt-6 w-full max-w-sm self-stretch rounded-2xl border border-indigo-500/40 bg-linear-to-br from-slate-900 via-slate-950 to-indigo-900/40 p-5 shadow-lg shadow-indigo-900/40 md:mt-0">
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-indigo-300">
               Live deals
@@ -102,6 +98,7 @@ export default function GamesPage() {
         </section>
 
         {/* FEATURED GAMES SECTION */}
+
         <section className="space-y-6">
           <div className="flex items-center justify-between gap-3">
             <div>
@@ -109,8 +106,7 @@ export default function GamesPage() {
                 Featured games
               </h2>
               <p className="text-sm text-slate-300">
-                Hand-picked titles from our curators. No API yet — pure mock
-                data for now.
+                Hand-picked titles from our curators.
               </p>
             </div>
             <button className="hidden text-xs font-medium text-slate-300 underline-offset-4 hover:text-indigo-300 hover:underline sm:inline">
@@ -118,7 +114,8 @@ export default function GamesPage() {
             </button>
           </div>
 
-          {/* grid ของ card games ใช้ data จาก featuredGames */}
+          <MarketplaceToolbar />
+
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             <FeaturedGamesSection />
           </div>
@@ -131,8 +128,7 @@ export default function GamesPage() {
               Browse by category
             </h2>
             <p className="text-sm text-slate-300">
-              Quick filters to help players discover games they love. (Static
-              for now.)
+              Quick filters to help players discover games they love.
             </p>
           </div>
 
@@ -157,8 +153,7 @@ export default function GamesPage() {
               How it works
             </h2>
             <p className="text-sm text-slate-300">
-              Simple 3-step flow for players. Later we can wire this to real
-              cart and checkout logic.
+              Simple 3-step flow for players.
             </p>
           </div>
 
@@ -204,10 +199,7 @@ export default function GamesPage() {
             <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
               Ready to explore the marketplace?
             </h2>
-            <p className="mx-auto max-w-md text-sm text-slate-300">
-              This page is fully static for now. In the next steps, we&apos;ll
-              hook it up to mock APIs, SWR, Zustand, and Firebase auth.
-            </p>
+
             <button className="rounded-full bg-indigo-500 px-6 py-2.5 text-sm font-medium text-white shadow-md shadow-indigo-500/40 transition hover:bg-indigo-400">
               Start browsing games
             </button>

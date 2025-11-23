@@ -4,9 +4,10 @@ import { findGameById } from "@/lib/mock/games";
 
 export async function GET(
   _req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  const baseGame = findGameById(params.id);
+  const { id } = await params;
+  const baseGame = findGameById(id);
 
   if (!baseGame) {
     return NextResponse.json({ message: "Game not found" }, { status: 404 });
