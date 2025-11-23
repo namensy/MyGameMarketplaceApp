@@ -1,8 +1,6 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
-// ค่าพวกนี้ควรมา จาก environment variables (NEXT_PUBLIC_*)
-// ในโปรเจกต์จริงให้ใส่ใน .env.local แล้วอ่านผ่าน process.env
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,

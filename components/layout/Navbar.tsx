@@ -10,7 +10,7 @@ const Navbar = () => {
   const isLoading = status === "loading";
 
   return (
-    <header className="w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur">
+    <header className="w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-30">
       <nav className="mx-auto flex h-16 max-w-screen items-center justify-between px-4">
         <div className="flex items-center justify-center gap-4">
           <Link href="/">
